@@ -1,16 +1,14 @@
 from typing import cast
-from dotenv import load_dotenv
 import discord
 import os
 
 intents=discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
-load_dotenv()
 
 @client.event
 async def on_message(message):
-  channel = client.get_channel(int(os.getenv("DUMP_CHANNEL")))
+  channel = client.get_channel(int(os.environ("DUMP_CHANNEL")))
   if message.author == client.user:
       return
 
@@ -22,4 +20,4 @@ async def on_message(message):
 'de la Grue Jaune, '\
 'merci d\'avoir communiqué !')
 
-client.run(os.getenv("TOKEN"))
+client.run(os.environ("TOKEN"))
