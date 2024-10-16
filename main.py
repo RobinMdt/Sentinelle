@@ -8,7 +8,7 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_message(message):
-  channel = client.get_channel(int(os.environ("DUMP_CHANNEL")))
+  channel = client.get_channel(int(os.environ.get("DUMP_CHANNEL")))
   if message.author == client.user:
       return
 
@@ -20,4 +20,4 @@ async def on_message(message):
 'de la Grue Jaune, '\
 'merci d\'avoir communiqué !')
 
-client.run(os.environ("TOKEN"))
+client.run(os.environ.get("TOKEN"))
