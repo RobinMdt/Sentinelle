@@ -16,4 +16,4 @@ jobs:
               env:
                 TOKEN: ${{ secrets.TOKEN }}
                 DUMP_CHANNEL: ${{ secrets.DUMP_CHANNEL }
-                run: python main.py
+              run: python main.py
