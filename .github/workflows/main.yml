@@ -15,4 +15,5 @@ jobs:
             - name: start bot
               env:
                 TOKEN: ${{ secrets.TOKEN }}
-                DUMP_CHANNEL: ${{ secrets.DUMP_CHANNEL }}
+                DUMP_CHANNEL: ${{ secrets.DUMP_CHANNEL }
+                run: python main.py
