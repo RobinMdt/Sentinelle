@@ -12,6 +12,12 @@ jobs:
               with:
                 python-version: '3.10' # install the python version needed
 
+            - name: install discord
+              uses: BSFishy/pip-action@v1
+              with:
+                packages:
+                    discord
+
             - name: start bot
               env:
                 TOKEN: ${{ secrets.TOKEN }}
